@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Web Test Recorder",
+  "version": "1.0",
+  "description": "Record user interactions and developer tools information",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "storage",
+    "downloads",
+    "desktopCapture"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
